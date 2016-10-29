@@ -42,7 +42,7 @@
 
 <body> 
 
-    <div id="status_box"> Komentáø odeslán </div>
+    <div id="status_box"> Komentar odeslan </div>
     
     <h1> Live komentare </h1>
 
@@ -50,10 +50,10 @@
         <?php include("get.php"); ?> 
     </div>
 
-    Vaše jméno: <br>
+    Jmeno: <br>
     <input type="text" id="firstname">
-    <div id="fillName" style="color:red;"> Zadejte prosím jméno :) </div>
-    <br> Pøíjmení: <br>
+    <div id="fillName" style="color:red;"> Zadejte prosim jmeno :) </div>
+    <br> Prijmeni: <br>
     <input type="text" id="lastname"> <br>
     <textarea id="text" style="resize:none; width:80%; height:20%;" placeholder="Tvuj komentar..."></textarea> <br>
     <button id="new_comment"> Odeslat! </button>
@@ -78,12 +78,12 @@
                   
                   setTimeout(function(){ 
                     $('#comment_article').load('get.php');  
-                    $('#status_box').text("Komentáøe aktualizovány"); 
+                    $('#status_box').text("Komentare aktualizovany"); 
                     }, 3000);
                     
                   setTimeout(function(){ 
                     $('#status_box').hide(); 
-                    $('#status_box').text("Komentáø odeslán");
+                    $('#status_box').text("Komentar odeslan");
                     }, 4000);
                     
                   });
