@@ -62,6 +62,31 @@
     $('#fillName').hide();      
     $('#status_box').hide();
     
+    function refresh() {
+          setTimeout(function(){ 
+                    $('#comment_article').load('get.php');  
+                    $('#status_box').text("Komentare aktualizovany");     refreshInterval(4000);
+                    }, 2000);
+                    
+                     setTimeout(function(){ 
+                    $('#status_box').hide(); 
+                    $('#status_box').text("Komentar odeslan");
+                    }, 4000);
+    };
+    
+    function refreshInterval(i) {
+        setTimeout(function(){ 
+                    $('#comment_article').load('get.php');  
+                    $('#status_box').text("Komentare aktualizovany");     $('#status_box').show();
+                    }, i);
+                    
+                    setTimeout(function(){ 
+                    $('#status_box').hide(); 
+                    $('#status_box').text("Komentar odeslan");            refreshInterval(2000);
+                    }, i+1000);
+    }
+    
+    
     $('#new_comment').click(function() {
         $firstname =   document.getElementById("firstname").value; 
         
@@ -76,15 +101,9 @@
             
                   console.log(e);
                   
-                  setTimeout(function(){ 
-                    $('#comment_article').load('get.php');  
-                    $('#status_box').text("Komentare aktualizovany"); 
-                    }, 3000);
+                   refresh();
                     
-                  setTimeout(function(){ 
-                    $('#status_box').hide(); 
-                    $('#status_box').text("Komentar odeslan");
-                    }, 4000);
+                 
                     
                   });
          } else { 
